@@ -19,7 +19,7 @@ The Unified Grievance Redressal Portal for Kerala Government is a web-based plat
 
 ## Installation Instructions
 1. **Clone the repository**
-git clone https://github.com/your-username/unified-grievance-portal.git
+git clone https://github.com/Anandhakryshnan/Grievance_Redressal.git
 2. **Navigate to the project directory**
 3. **Install dependencies**
 4. **Set up environment variables**

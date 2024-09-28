@@ -1,24 +1,14 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <nav className="navbar">
-      <div className="navbar-container">
-        <Link to="/" className="navbar-logo">Kerala Gov</Link>
-        <ul className="nav-menu">
-          <li className="nav-item">
-            <Link to="/submit" className="nav-links">Submit Grievance</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/track" className="nav-links">Track Grievance</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/contact" className="nav-links">Contact</Link>
-          </li>
-        </ul>
-      </div>
+    <nav style={{ backgroundColor: '#004b87', padding: '10px 0', color: 'white', textAlign: 'center' }}>
+      <Link to="/" style={{ color: 'white', marginRight: 20, textDecoration: 'none' }}>Home</Link>
+      <Link to="/submit-grievance" style={{ color: 'white', marginRight: 20, textDecoration: 'none' }}>Submit Grievance</Link>
+      <Link to="/track-grievance" style={{ color: 'white', textDecoration: 'none' }}>Track Grievance</Link>
     </nav>
   );
 }
 
-export default Navbar
+export default Navbar;

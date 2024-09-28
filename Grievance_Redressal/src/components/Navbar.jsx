@@ -1,21 +1,14 @@
-import React from 'react'
-import "./index.css"
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 function Navbar() {
   return (
-    <div className='nav'>
-      <div>
-        <img src="./download.png"  className='kerala-png'/>
-        <h1>Grievance redressal System
-        Industries Department - GoK</h1>
-      </div>
-      <div>
-        <ul>
-            <li>hi</li>
-            <li>cnjcn</li>
-        </ul>
-      </div>
-    </div>
-  )
+    <nav style={{ backgroundColor: '#004b87', padding: '10px 0', color: 'white', textAlign: 'center' }}>
+      <Link to="/" style={{ color: 'white', marginRight: 20, textDecoration: 'none' }}>Home</Link>
+      <Link to="/submit-grievance" style={{ color: 'white', marginRight: 20, textDecoration: 'none' }}>Submit Grievance</Link>
+      <Link to="/track-grievance" style={{ color: 'white', textDecoration: 'none' }}>Track Grievance</Link>
+    </nav>
+  );
 }
 
-export default Navbar
+export default Navbar;

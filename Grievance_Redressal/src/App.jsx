@@ -4,17 +4,18 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Footer from './components/Footer';
 import './App.css';
+import RegisterPage from './components/RegisterPage';
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/RegisterPage" element={<RegisterPage />} />
           {/* Insert other routes here if needed */}
         </Routes>
-        <Footer />
+        
       </div>
     </Router>
   );

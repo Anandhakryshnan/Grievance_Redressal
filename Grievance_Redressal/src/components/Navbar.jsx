@@ -1,21 +1,24 @@
-import React from 'react'
-import "./index.css"
+import { Link } from 'react-router-dom';
+
 function Navbar() {
   return (
-    <div className='nav'>
-      <div>
-        <img src="./download.png"  className='kerala-png'/>
-        <h1>Grievance redressal System
-        Industries Department - GoK</h1>
-      </div>
-      <div>
-        <ul>
-            <li>hi</li>
-            <li>cnjcn</li>
+    <nav className="navbar">
+      <div className="navbar-container">
+        <Link to="/" className="navbar-logo">Kerala Gov</Link>
+        <ul className="nav-menu">
+          <li className="nav-item">
+            <Link to="/submit" className="nav-links">Submit Grievance</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/track" className="nav-links">Track Grievance</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/contact" className="nav-links">Contact</Link>
+          </li>
         </ul>
       </div>
-    </div>
-  )
+    </nav>
+  );
 }
 
 export default Navbar

@@ -60,20 +60,22 @@ function RegisterPage() {
             value={formData.district}
             onChange={handleChange}
             required
+            className='district'
           >
-            <option value="">Select District</option>
-            <option value="District 1">District 1</option>
-            <option value="District 2">District 2</option>
-            <option value="District 3">District 3</option>
-            <option value="District 4">District 4</option>
-            <option value="District 5">District 5</option>
-            <option value="District 6">District 6</option>
-            <option value="District 7">District 7</option>
-            <option value="District 8">District 8</option>
-            <option value="District 9">District 9</option>
-            <option value="District 10">District 10</option>
-            <option value="District 11">District 11</option>
-            <option value="District 12">District 12</option>
+            <option value="Alappuzha">Alappuzha</option>
+            <option value="Ernakulam">Ernakulam</option>
+            <option value="Idukki">Idukki</option>
+            <option value="Kannur">Kannur</option>
+            <option value="Kasaragod">Kasaragod</option>
+            <option value="Kollam">Kollam</option>
+            <option value="Kottayam">Kottayam</option>
+            <option value="Kozhikode">Kozhikode</option>
+            <option value="Malappuram">Malappuram</option>
+            <option value="Palakkad">Palakkad</option>
+            <option value="Pathanamthitta">Pathanamthitta</option>
+            <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+            <option value="Thrissur">Thrissur</option>
+            <option value="Wayanad">Wayanad</option>
           </select>
           <label>District</label>
         </div>

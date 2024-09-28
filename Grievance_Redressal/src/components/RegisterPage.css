@@ -52,8 +52,10 @@ body {
   outline: none;
   transition: border-color 0.3s ease;
 }
-.input-group select{
-  width: 225px;
+.input-group .district{
+  position: relative;
+  width: 14rem;
+  /* background-color: red; */
 }
 
 .input-group label {

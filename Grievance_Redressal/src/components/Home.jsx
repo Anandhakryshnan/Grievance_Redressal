@@ -7,7 +7,7 @@ function Home() {
   return (
     <>
       <Navbar />
-      <div className="home">
+      {/* <div className="home">
         <section className="hero-section">
             <h1>Welcome to the Unified Grievance Redressal Portal of Kerala</h1>
             <p>Submit and track your grievances easily with our system.</p>
@@ -24,7 +24,7 @@ function Home() {
             <p>Email: info@gov.kerala</p>
             <p>Phone: +91 123 456 7890</p>
         </section>
-      </div>
+      </div> */}
       <Footer />
     </>
   )

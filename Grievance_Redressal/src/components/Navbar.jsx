@@ -17,7 +17,7 @@ export default function Navbar() {
             <span className="sr-only">Your Company</span>
             <img alt="" src="./gov.png" />
           </a>
-          <span class="ml-3 text-xl">Grievance Redressal Portal</span>
+          <span className="ml-3 text-xl">Grievance Redressal Portal</span>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -31,7 +31,7 @@ export default function Navbar() {
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Log in <span aria-hidden="true">&rarr;</span>
+          <Link to="/login">Login</Link> <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
         <button

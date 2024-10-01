@@ -115,6 +115,7 @@ function RegisterPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   const handleTypeChange = (event) => {
+    
     const selected = event.target.value;
     setSelectedType(selected);
     setLocalBodies(idukki[selected] || []);
@@ -166,7 +167,7 @@ function RegisterPage() {
               <input
                 type="text"
                 name="name"
-                value={formData.firstName}
+                value={formData.name}
                 onChange={handleChange}
                 className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 placeholder="Name"
@@ -183,9 +184,10 @@ function RegisterPage() {
                 required
                 className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               >
-                <option value="Alappuzha">Alappuzha</option>
-                <option value="Ernakulam">Ernakulam</option>
                 <option value="Idukki">Idukki</option>
+                {/* <option value="Alappuzha">Alappuzha</option>
+                <option value="Ernakulam">Ernakulam</option>
+                
                 <option value="Kannur">Kannur</option>
                 <option value="Kasaragod">Kasaragod</option>
                 <option value="Kollam">Kollam</option>
@@ -196,7 +198,7 @@ function RegisterPage() {
                 <option value="Pathanamthitta">Pathanamthitta</option>
                 <option value="Thiruvananthapuram">Thiruvananthapuram</option>
                 <option value="Thrissur">Thrissur</option>
-                <option value="Wayanad">Wayanad</option>
+                <option value="Wayanad">Wayanad</option> */}
               </select>
             </div>
           </div>
@@ -220,7 +222,7 @@ function RegisterPage() {
               </label>
               <select
                 name="localBodyType"
-                value={formData.localBodyType}
+                value={selectedType}
                 onChange={handleTypeChange}
                 required
                 className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"

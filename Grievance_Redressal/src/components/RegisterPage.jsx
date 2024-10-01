@@ -1,7 +1,67 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 function RegisterPage() {
+  const idukki = {
+    Municipality: [{ name: "Thodupuzha" }, { name: "Kattappana" }],
+    GramPanchayat: [
+      { name: "Adimaly" },
+      { name: "Alakkode" },
+      { name: "Arakkuklam" },
+      { name: "Ayyappancoil" },
+      { name: "Bysonvalley" },
+      { name: "Chakkupallam" },
+      { name: "Chinnakkanal" },
+      { name: "Devikulam" },
+      { name: "Edavetty" },
+      { name: "Edamalakkudy" },
+      { name: "Elappara" },
+      { name: "Erattayar" },
+      { name: "Idukki-Kanjikuzhi" },
+      { name: "Kamakshi" },
+      { name: "Kanchiyar" },
+      { name: "Kanthalloor" },
+      { name: "Karimannoor" },
+      { name: "Karimkunnam" },
+      { name: "Karunapuram" },
+      { name: "Kodikkulam" },
+      { name: "Kokkayar" },
+      { name: "Konnathady" },
+      { name: "Kudayathoor" },
+      { name: "Kumali" },
+      { name: "Kumaramangalam" },
+      { name: "Manakkad" },
+      { name: "Mankulam" },
+      { name: "Marayoor" },
+      { name: "Mariyapuram" },
+      { name: "Munnar" },
+      { name: "Muttom" },
+      { name: "Nedumkandom" },
+      { name: "Pallivasal" },
+      { name: "Pampadumpara" },
+      { name: "Peerumedu" },
+      { name: "Peruvanthanam" },
+      { name: "Purappuzha" },
+      { name: "Rajakkad" },
+      { name: "Rajakumari" },
+      { name: "Santhanpara" },
+      { name: "Senapathy" },
+      { name: "Udumbanchola" },
+      { name: "Udumbannoor" },
+      { name: "Upputhara" },
+      { name: "Vandanmedu" },
+      { name: "Vandipperiyar" },
+      { name: "Vannappuram" },
+      { name: "Vathikkudy" },
+      { name: "Vattavada" },
+      { name: "Vazhathoppu" },
+      { name: "Vellathooval" },
+      { name: "Velliyamattom" },
+    ],
+  };
+  const [selectedType, setSelectedType] = useState(''); 
+  const [localBodies, setLocalBodies] = useState([]);
+
   const [formData, setFormData] = useState({
     name: "",
     district: "",
@@ -54,6 +114,11 @@ function RegisterPage() {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+  const handleTypeChange = (event) => {
+    const selected = event.target.value;
+    setSelectedType(selected);
+    setLocalBodies(idukki[selected] || []);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -82,7 +147,7 @@ function RegisterPage() {
   };
 
   return (
-    <div className="bg-gray-50 flex flex-col items-center justify-center h-screen">
+    <div className="bg-gray-50 flex flex-col max-w-full items-center justify-center h-screen">
       <div className="max-w-2xl mx-auto text-center">
         <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
           Register
@@ -156,13 +221,14 @@ function RegisterPage() {
               <select
                 name="localBodyType"
                 value={formData.localBodyType}
-                onChange={handleChange}
+                onChange={handleTypeChange}
                 required
                 className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               >
-                <option value="Alappuzha">Municipality</option>
-                <option value="Ernakulam">Corporation</option>
-                <option value="Idukki">Panchayath</option>
+                <option value="">Select Local Body Type</option>
+                <option value="Municipality">Municipality</option>
+                <option value="Corporation">Corporation</option>
+                <option value="GramPanchayat">Panchayath</option>
               </select>
             </div>
           </div>
@@ -171,14 +237,16 @@ function RegisterPage() {
               <label className="block text-sm font-medium text-gray-700">
                 Name of Local Body
               </label>
-              <input
-                type="text"
+              <select
                 name="localBodyName"
                 value={formData.localBodyName}
                 onChange={handleChange}
                 className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                placeholder="Name of Local Body"
-              />
+              >
+                {localBodies.map((body, index) =>(
+                  <option key={index} value={body.name}>{body.name}</option>
+                ))}
+              </select>
             </div>
             <div className="w-1/2">
               <label className="block text-sm font-medium text-gray-700">
@@ -204,9 +272,15 @@ function RegisterPage() {
                 name="mobile"
                 value={formData.mobile}
                 onChange={handleChange}
-                className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                className="mt-1 p-2 w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 placeholder="Mobile Number"
               />
+              {/* <button className="mt-1 absolute text-sm p-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">Verify</button> */}
+            </div>
+            <div className="w-1/4">
+              <button className="absolute mt-6 p-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">
+                Verify
+              </button>
             </div>
             <div className="w-1/3">
               <label className="block text-sm font-medium text-gray-700">
@@ -252,8 +326,13 @@ function RegisterPage() {
           </div>
           <div className="flex items-center">
             <label className="ml-2 block text-sm text-gray-700">
-              Already a member {" "}
-              <Link to="/login" className="text-indigo-600 hover:text-indigo-500">Login</Link>
+              Already a member{" "}
+              <Link
+                to="/login"
+                className="text-indigo-600 hover:text-indigo-500"
+              >
+                Login
+              </Link>
               .
             </label>
           </div>

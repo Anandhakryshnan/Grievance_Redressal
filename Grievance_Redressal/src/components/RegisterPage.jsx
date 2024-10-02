@@ -17,7 +17,7 @@ function RegisterPage() {
       { name: "Edamalakkudy" },
       { name: "Elappara" },
       { name: "Erattayar" },
-      { name: "Idukki-Kanjikuzhi" },
+      { name: "Kanjikuzhi" },
       { name: "Kamakshi" },
       { name: "Kanchiyar" },
       { name: "Kanthalloor" },
@@ -82,12 +82,7 @@ function RegisterPage() {
     let newErrors = {};
 
     if (!formData.name.trim()) newErrors.name = "Name is required";
-    if (!formData.district) newErrors.district = "District is required";
     if (!formData.address.trim()) newErrors.address = "Address is required";
-    if (!formData.localBodyType)
-      newErrors.localBodyType = "Local Body Type is required";
-    if (!formData.localBodyName.trim())
-      newErrors.localBodyName = "Local Body Name is required";
     if (!formData.mobile) {
       newErrors.mobile = "Mobile number is required";
     } else if (!/^\d{10}$/.test(formData.mobile)) {
@@ -243,11 +238,12 @@ function RegisterPage() {
                 name="localBodyName"
                 value={formData.localBodyName}
                 onChange={handleChange}
+                
                 className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               >
                 {localBodies.map((body, index) =>(
-                  <option key={index} value={body.name}>{body.name}</option>
-                ))}
+                  <option  size="15" key={index} value={body.name} className="bg-slate-800 text-white ">{body.name}</option>
+                ))};
               </select>
             </div>
             <div className="w-1/2">
